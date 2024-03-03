@@ -1,5 +1,5 @@
 # How to: Regex Expression Interpretation
-This is a tutorial that explains how a specific regular expression (regex) functions by breaking down each part of the expression and describing what it does.
+This is a tutorial that explains how a specific regular expression (regex) functions by breaking down each part of the expression and describing what it does. This tutorial will be found in Gist.
 
 ## Summary
 The regex function that I will be breaking down today is:
