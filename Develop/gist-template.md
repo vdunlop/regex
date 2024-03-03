@@ -115,7 +115,41 @@ You'll notice in regex that some characters have multiple meanings. For example 
 The \ in front of a - means that you are looking for the literal -.
 
 ## Walkthrough
+This is a walkthrough of the characters and what they are doing in our regex example. 
 
+We are looking for the URL markdownguide.org/basic-syntax/
+
+Our regex begins and ends with the forward slash (**/**) because it is a literal.
+
+The **^** says that we want to see the next pattern at the beginning of our string.
+
+Our next pattern could be **http** with an optional **s** (because of the **?** after s) and then **:** and then **//** (shown with character escapes **\\/\\/**). BUT, since this is all wrapped in parentheses **()**, it is a group. This group is followed by a **?**, so our entire string may begin with **http://** or **https://** but it is optional.
+
+**https://**
+
+Moving on to the next pattern wrapped in **()**. We will look at the characters wrapped in **[]**. Square brackets signify a bracket expression, so we are allowing the characters within the [] to be in the search. **\d** means digits 0 through 9. **a-z** mean the small letters a through z are allowed. **\.** escapes the **.** so we are also including .  **-** at the end means we will include **-**. And finally, **+** tells us that we will match 1 or more of these characters.
+
+**markdownguide**
+
+We now see a **\.** which means we are requiring a . to follow the above pattern.
+
+**.**
+
+The next pattern is also wrapped in **()**. First let's look at the characters wrapped in the **[]**. **a-z** is any lower case letter and **\.** is the literal **.**. The **{2,6}** following the [] means that we are searching for these characters in the [], but only the first **2** to **6** characters (a word containing a through z and/or . of 2 to 6 characters in length).
+
+**.org**
+
+The last pattern wrapped in **()** also has characters wrapped in **[]** that will be included in the search. These letters are the **/** which is escaped **\\/**; the **\w** (any alphanumeric characters); a **space**; a **.** which is escaped **\.**; and a **-**. Since the [] are followed by a **\***, you can have 0 or more of these characters and since the () are also followed by a **\***, you can have 0 or more of these patterns.
+
+**/basic-syntax**
+
+Finally, the **\\/\?** means that after all of the above we are looking for an optional (?) \. 
+
+**/**
+
+And last but not least, the **$** means we are finishing our search string at the optional \.
+
+**/basic-syntax/**
 
 ## Author
 I am a software engineer. I worked on real-time embedded projects for almost 15 years. Then, I took a hiatus from work to raise my children and care for my disabled mom. Now that the kids are moved out and my mom is in a safe place, I am working on a 6-month Web Programming certificate program through the University of Minnesota with the goal of becoming a backend web programmer working with databases.

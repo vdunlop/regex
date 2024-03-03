@@ -29,3 +29,7 @@ THEN I find a section about the author and a link to the author’s GitHub profi
 
 ## Regex Being Interpreted
 /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/
+
+
+
+
